@@ -1,0 +1,16 @@
+package component:crc32-wasm;
+
+interface crc32-hasher {
+    resource hasher {
+        constructor();
+        update: func(input: list<u8>);
+        finalize: func() -> u32;
+    }
+
+}
+
+/// An example world for the component to target.
+world crc32 {
+    export crc32-hasher;
+    export hash: func(input: list<u8>) -> u32;
+}

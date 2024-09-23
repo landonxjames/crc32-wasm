@@ -1,0 +1,15 @@
+{
+    "rust-analyzer.check.overrideCommand": [
+        "cargo",
+        "component",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--message-format=json"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1A158E",
+        "titleBar.activeBackground": "#241DC6",
+        "titleBar.activeForeground": "#FCFCFF"
+    },
+}
