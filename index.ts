@@ -1,5 +1,6 @@
 import { hash, crc32Hasher } from "./js-bindings/crc32_wasm";
 
+//Some util functions to convert numbers to byte arrays
 function bitLength(number) {
   return Math.floor(Math.log2(number)) + 1;
 }
@@ -25,9 +26,18 @@ function toBytes(number) {
   return bytes.buffer;
 }
 
+//Using the simple exported hash function
 let helloWorld = Buffer.from("Hello world");
-console.log("Hello World as buf: " + helloWorld);
-let foo = hash(helloWorld);
-console.log("Hash: " + foo);
-let b64encodedchecksum = Buffer.from(toBytes(foo)).toString("base64");
-console.log("calculated checksum: " + b64encodedchecksum);
+let hashOut = hash(helloWorld);
+let b64encodedchecksum = Buffer.from(toBytes(hashOut)).toString("base64");
+console.log("Hash function checksum: " + b64encodedchecksum);
+
+//Using the hasher class for more complex/longer checksums
+let hasher = new crc32Hasher.Hasher();
+hasher.update(Buffer.from("Hello"));
+hasher.update(Buffer.from(" world"));
+let hasherOut = hasher.finalize();
+let b64encodedHasherchecksum = Buffer.from(toBytes(hasherOut)).toString(
+  "base64"
+);
+console.log("Hasher class checksum: " + b64encodedHasherchecksum);
