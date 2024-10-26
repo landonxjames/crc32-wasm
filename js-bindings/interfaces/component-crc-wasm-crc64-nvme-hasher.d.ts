@@ -1,10 +1,10 @@
-export namespace ComponentCrc32WasmCrc32Hasher {
+export namespace ComponentCrcWasmCrc64NvmeHasher {
   export { Hasher };
 }
 
 export class Hasher {
   constructor()
   update(input: Uint8Array): void;
-  finalize(): number;
+  finalize(): bigint;
   reset(): void;
 }

@@ -115,7 +115,7 @@ const captureTable1= new Map();
 let captureCnt1 = 0;
 handleTables[1] = handleTable1;
 
-function trampoline6() {
+function trampoline8() {
   const ret = getStderr();
   if (!(ret instanceof OutputStream)) {
     throw new TypeError('Resource error: Not a valid "OutputStream" resource.');
@@ -133,7 +133,7 @@ const captureTable2= new Map();
 let captureCnt2 = 0;
 handleTables[2] = handleTable2;
 
-function trampoline7() {
+function trampoline9() {
   const ret = getStdin();
   if (!(ret instanceof InputStream)) {
     throw new TypeError('Resource error: Not a valid "InputStream" resource.');
@@ -147,7 +147,7 @@ function trampoline7() {
   return handle0;
 }
 
-function trampoline8() {
+function trampoline10() {
   const ret = getStdout();
   if (!(ret instanceof OutputStream)) {
     throw new TypeError('Resource error: Not a valid "OutputStream" resource.');
@@ -161,7 +161,7 @@ function trampoline8() {
   return handle0;
 }
 
-function trampoline9(arg0) {
+function trampoline11(arg0) {
   let variant0;
   switch (arg0) {
     case 0: {
@@ -188,7 +188,7 @@ let exports2;
 let memory0;
 let realloc0;
 
-function trampoline10(arg0) {
+function trampoline12(arg0) {
   const ret = getEnvironment();
   var vec3 = ret;
   var len3 = vec3.length;
@@ -213,7 +213,7 @@ const captureTable3= new Map();
 let captureCnt3 = 0;
 handleTables[3] = handleTable3;
 
-function trampoline11(arg0, arg1, arg2) {
+function trampoline13(arg0, arg1, arg2) {
   var handle1 = arg0;
   var rep2 = handleTable3[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable3.get(rep2);
@@ -421,7 +421,7 @@ function trampoline11(arg0, arg1, arg2) {
   }
 }
 
-function trampoline12(arg0, arg1) {
+function trampoline14(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable3[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable3.get(rep2);
@@ -629,7 +629,7 @@ function trampoline12(arg0, arg1) {
   }
 }
 
-function trampoline13(arg0, arg1) {
+function trampoline15(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable3[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable3.get(rep2);
@@ -871,7 +871,7 @@ function trampoline13(arg0, arg1) {
   }
 }
 
-function trampoline14(arg0, arg1) {
+function trampoline16(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable3[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable3.get(rep2);
@@ -1150,7 +1150,7 @@ const captureTable0= new Map();
 let captureCnt0 = 0;
 handleTables[0] = handleTable0;
 
-function trampoline15(arg0, arg1) {
+function trampoline17(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable0[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable0.get(rep2);
@@ -1334,7 +1334,7 @@ function trampoline15(arg0, arg1) {
   }
 }
 
-function trampoline16(arg0, arg1) {
+function trampoline18(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable1[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable1.get(rep2);
@@ -1398,7 +1398,7 @@ function trampoline16(arg0, arg1) {
   }
 }
 
-function trampoline17(arg0, arg1, arg2, arg3) {
+function trampoline19(arg0, arg1, arg2, arg3) {
   var handle1 = arg0;
   var rep2 = handleTable1[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable1.get(rep2);
@@ -1464,7 +1464,7 @@ function trampoline17(arg0, arg1, arg2, arg3) {
   }
 }
 
-function trampoline18(arg0, arg1, arg2, arg3) {
+function trampoline20(arg0, arg1, arg2, arg3) {
   var handle1 = arg0;
   var rep2 = handleTable1[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable1.get(rep2);
@@ -1530,7 +1530,7 @@ function trampoline18(arg0, arg1, arg2, arg3) {
   }
 }
 
-function trampoline19(arg0, arg1) {
+function trampoline21(arg0, arg1) {
   var handle1 = arg0;
   var rep2 = handleTable1[(handle1 << 1) + 1] & ~T_FLAG;
   var rsc0 = captureTable1.get(rep2);
@@ -1593,7 +1593,7 @@ function trampoline19(arg0, arg1) {
   }
 }
 
-function trampoline20(arg0) {
+function trampoline22(arg0) {
   const ret = getDirectories();
   var vec3 = ret;
   var len3 = vec3.length;
@@ -1636,7 +1636,22 @@ function trampoline1(handle) {
     exports0['15'](handleEntry.rep);
   }
 }
-function trampoline2(handle) {
+const handleTable5 = [T_FLAG, 0];
+const finalizationRegistry5 = finalizationRegistryCreate((handle) => {
+  const { rep } = rscTableRemove(handleTable5, handle);
+  exports0['16'](rep);
+});
+
+handleTables[5] = handleTable5;
+const trampoline2 = rscTableCreateOwn.bind(null, handleTable5);
+function trampoline3(handle) {
+  const handleEntry = rscTableRemove(handleTable5, handle);
+  if (handleEntry.own) {
+    
+    exports0['16'](handleEntry.rep);
+  }
+}
+function trampoline4(handle) {
   const handleEntry = rscTableRemove(handleTable3, handle);
   if (handleEntry.own) {
     
@@ -1649,7 +1664,7 @@ function trampoline2(handle) {
     }
   }
 }
-function trampoline3(handle) {
+function trampoline5(handle) {
   const handleEntry = rscTableRemove(handleTable1, handle);
   if (handleEntry.own) {
     
@@ -1662,7 +1677,7 @@ function trampoline3(handle) {
     }
   }
 }
-function trampoline4(handle) {
+function trampoline6(handle) {
   const handleEntry = rscTableRemove(handleTable0, handle);
   if (handleEntry.own) {
     
@@ -1675,7 +1690,7 @@ function trampoline4(handle) {
     }
   }
 }
-function trampoline5(handle) {
+function trampoline7(handle) {
   const handleEntry = rscTableRemove(handleTable2, handle);
   if (handleEntry.own) {
     
@@ -1689,19 +1704,29 @@ function trampoline5(handle) {
   }
 }
 
-function hash(arg0) {
+function crc32Hash(arg0) {
   var val0 = arg0;
   var len0 = val0.byteLength;
   var ptr0 = realloc1(0, 0, 1, len0 * 1);
   var src0 = new Uint8Array(val0.buffer || val0, val0.byteOffset, len0 * 1);
   (new Uint8Array(memory0.buffer, ptr0, len0 * 1)).set(src0);
-  const ret = exports1.hash(ptr0, len0);
+  const ret = exports1['crc32-hash'](ptr0, len0);
   return ret >>> 0;
+}
+
+function crc64NvmeHash(arg0) {
+  var val0 = arg0;
+  var len0 = val0.byteLength;
+  var ptr0 = realloc1(0, 0, 1, len0 * 1);
+  var src0 = new Uint8Array(val0.buffer || val0, val0.byteOffset, len0 * 1);
+  (new Uint8Array(memory0.buffer, ptr0, len0 * 1)).set(src0);
+  const ret = exports1['crc64-nvme-hash'](ptr0, len0);
+  return BigInt.asUintN(64, ret);
 }
 
 class Hasher{
   constructor() {
-    const ret = exports1['component:crc32-wasm/crc32-hasher#[constructor]hasher']();
+    const ret = exports1['component:crc-wasm/crc32-hasher#[constructor]hasher']();
     var handle1 = ret;
     var rsc0 = new.target === Hasher ? this : Object.create(Hasher.prototype);
     Object.defineProperty(rsc0, symbolRscHandle, { writable: true, value: handle1});
@@ -1728,7 +1753,7 @@ Hasher.prototype.update = function update(arg1) {
   var ptr2 = realloc1(0, 0, 1, len2 * 1);
   var src2 = new Uint8Array(val2.buffer || val2, val2.byteOffset, len2 * 1);
   (new Uint8Array(memory0.buffer, ptr2, len2 * 1)).set(src2);
-  exports1['component:crc32-wasm/crc32-hasher#[method]hasher.update'](handle0, ptr2, len2);
+  exports1['component:crc-wasm/crc32-hasher#[method]hasher.update'](handle0, ptr2, len2);
 };
 
 Hasher.prototype.finalize = function finalize() {
@@ -1737,21 +1762,85 @@ Hasher.prototype.finalize = function finalize() {
     throw new TypeError('Resource error: Not a valid "Hasher" resource.');
   }
   var handle0 = handleTable4[(handle1 << 1) + 1] & ~T_FLAG;
-  const ret = exports1['component:crc32-wasm/crc32-hasher#[method]hasher.finalize'](handle0);
+  const ret = exports1['component:crc-wasm/crc32-hasher#[method]hasher.finalize'](handle0);
   return ret >>> 0;
+};
+
+Hasher.prototype.reset = function reset() {
+  var handle1 = this[symbolRscHandle];
+  if (!handle1 || (handleTable4[(handle1 << 1) + 1] & T_FLAG) === 0) {
+    throw new TypeError('Resource error: Not a valid "Hasher" resource.');
+  }
+  var handle0 = handleTable4[(handle1 << 1) + 1] & ~T_FLAG;
+  exports1['component:crc-wasm/crc32-hasher#[method]hasher.reset'](handle0);
+};
+
+class Hasher$1{
+  constructor() {
+    const ret = exports1['component:crc-wasm/crc64-nvme-hasher#[constructor]hasher']();
+    var handle1 = ret;
+    var rsc0 = new.target === Hasher$1 ? this : Object.create(Hasher$1.prototype);
+    Object.defineProperty(rsc0, symbolRscHandle, { writable: true, value: handle1});
+    finalizationRegistry5.register(rsc0, handle1, rsc0);
+    Object.defineProperty(rsc0, symbolDispose, { writable: true, value: function () {
+      finalizationRegistry5.unregister(rsc0);
+      rscTableRemove(handleTable5, handle1);
+      rsc0[symbolDispose] = emptyFunc;
+      rsc0[symbolRscHandle] = null;
+      exports0['16'](handleTable5[(handle1 << 1) + 1] & ~T_FLAG);
+    }});
+    return rsc0;
+  }
+}
+
+Hasher$1.prototype.update = function update(arg1) {
+  var handle1 = this[symbolRscHandle];
+  if (!handle1 || (handleTable5[(handle1 << 1) + 1] & T_FLAG) === 0) {
+    throw new TypeError('Resource error: Not a valid "Hasher" resource.');
+  }
+  var handle0 = handleTable5[(handle1 << 1) + 1] & ~T_FLAG;
+  var val2 = arg1;
+  var len2 = val2.byteLength;
+  var ptr2 = realloc1(0, 0, 1, len2 * 1);
+  var src2 = new Uint8Array(val2.buffer || val2, val2.byteOffset, len2 * 1);
+  (new Uint8Array(memory0.buffer, ptr2, len2 * 1)).set(src2);
+  exports1['component:crc-wasm/crc64-nvme-hasher#[method]hasher.update'](handle0, ptr2, len2);
+};
+
+Hasher$1.prototype.finalize = function finalize() {
+  var handle1 = this[symbolRscHandle];
+  if (!handle1 || (handleTable5[(handle1 << 1) + 1] & T_FLAG) === 0) {
+    throw new TypeError('Resource error: Not a valid "Hasher" resource.');
+  }
+  var handle0 = handleTable5[(handle1 << 1) + 1] & ~T_FLAG;
+  const ret = exports1['component:crc-wasm/crc64-nvme-hasher#[method]hasher.finalize'](handle0);
+  return BigInt.asUintN(64, ret);
+};
+
+Hasher$1.prototype.reset = function reset() {
+  var handle1 = this[symbolRscHandle];
+  if (!handle1 || (handleTable5[(handle1 << 1) + 1] & T_FLAG) === 0) {
+    throw new TypeError('Resource error: Not a valid "Hasher" resource.');
+  }
+  var handle0 = handleTable5[(handle1 << 1) + 1] & ~T_FLAG;
+  exports1['component:crc-wasm/crc64-nvme-hasher#[method]hasher.reset'](handle0);
 };
 
 const $init = (() => {
   let gen = (function* init () {
     const module0 = fetchCompile(new URL('./crc32_wasm.core.wasm', import.meta.url));
     const module1 = fetchCompile(new URL('./crc32_wasm.core2.wasm', import.meta.url));
-    const module2 = base64Compile('AGFzbQEAAAABKQdgAX8AYAN/fn8AYAJ/fwBgBH9/f38AYAR/f39/AX9gAn9/AX9gAX8AAxEQAAECAgICAgMDAgAEBQUGBgQFAXABEBAHUhEBMAAAATEAAQEyAAIBMwADATQABAE1AAUBNgAGATcABwE4AAgBOQAJAjEwAAoCMTEACwIxMgAMAjEzAA0CMTQADgIxNQAPCCRpbXBvcnRzAQAKxwEQCQAgAEEAEQAACw0AIAAgASACQQERAQALCwAgACABQQIRAgALCwAgACABQQMRAgALCwAgACABQQQRAgALCwAgACABQQURAgALCwAgACABQQYRAgALDwAgACABIAIgA0EHEQMACw8AIAAgASACIANBCBEDAAsLACAAIAFBCRECAAsJACAAQQoRAAALDwAgACABIAIgA0ELEQQACwsAIAAgAUEMEQUACwsAIAAgAUENEQUACwkAIABBDhEGAAsJACAAQQ8RBgALAC8JcHJvZHVjZXJzAQxwcm9jZXNzZWQtYnkBDXdpdC1jb21wb25lbnQHMC4yMTUuMADPBwRuYW1lABMSd2l0LWNvbXBvbmVudDpzaGltAbIHEAAzaW5kaXJlY3Qtd2FzaTpjbGkvZW52aXJvbm1lbnRAMC4yLjAtZ2V0LWVudmlyb25tZW50AUhpbmRpcmVjdC13YXNpOmZpbGVzeXN0ZW0vdHlwZXNAMC4yLjAtW21ldGhvZF1kZXNjcmlwdG9yLndyaXRlLXZpYS1zdHJlYW0CSWluZGlyZWN0LXdhc2k6ZmlsZXN5c3RlbS90eXBlc0AwLjIuMC1bbWV0aG9kXWRlc2NyaXB0b3IuYXBwZW5kLXZpYS1zdHJlYW0DQGluZGlyZWN0LXdhc2k6ZmlsZXN5c3RlbS90eXBlc0AwLjIuMC1bbWV0aG9kXWRlc2NyaXB0b3IuZ2V0LXR5cGUEPGluZGlyZWN0LXdhc2k6ZmlsZXN5c3RlbS90eXBlc0AwLjIuMC1bbWV0aG9kXWRlc2NyaXB0b3Iuc3RhdAU6aW5kaXJlY3Qtd2FzaTpmaWxlc3lzdGVtL3R5cGVzQDAuMi4wLWZpbGVzeXN0ZW0tZXJyb3ItY29kZQZAaW5kaXJlY3Qtd2FzaTppby9zdHJlYW1zQDAuMi4wLVttZXRob2Rdb3V0cHV0LXN0cmVhbS5jaGVjay13cml0ZQc6aW5kaXJlY3Qtd2FzaTppby9zdHJlYW1zQDAuMi4wLVttZXRob2Rdb3V0cHV0LXN0cmVhbS53cml0ZQhNaW5kaXJlY3Qtd2FzaTppby9zdHJlYW1zQDAuMi4wLVttZXRob2Rdb3V0cHV0LXN0cmVhbS5ibG9ja2luZy13cml0ZS1hbmQtZmx1c2gJQ2luZGlyZWN0LXdhc2k6aW8vc3RyZWFtc0AwLjIuMC1bbWV0aG9kXW91dHB1dC1zdHJlYW0uYmxvY2tpbmctZmx1c2gKN2luZGlyZWN0LXdhc2k6ZmlsZXN5c3RlbS9wcmVvcGVuc0AwLjIuMC1nZXQtZGlyZWN0b3JpZXMLJWFkYXB0LXdhc2lfc25hcHNob3RfcHJldmlldzEtZmRfd3JpdGUMKGFkYXB0LXdhc2lfc25hcHNob3RfcHJldmlldzEtZW52aXJvbl9nZXQNLmFkYXB0LXdhc2lfc25hcHNob3RfcHJldmlldzEtZW52aXJvbl9zaXplc19nZXQOJmFkYXB0LXdhc2lfc25hcHNob3RfcHJldmlldzEtcHJvY19leGl0DzVkdG9yLVtleHBvcnRdY29tcG9uZW50OmNyYzMyLXdhc20vY3JjMzItaGFzaGVyLWhhc2hlcg');
-    const module3 = base64Compile('AGFzbQEAAAABKQdgAX8AYAN/fn8AYAJ/fwBgBH9/f38AYAR/f39/AX9gAn9/AX9gAX8AAmYRAAEwAAAAATEAAQABMgACAAEzAAIAATQAAgABNQACAAE2AAIAATcAAwABOAADAAE5AAIAAjEwAAAAAjExAAQAAjEyAAUAAjEzAAUAAjE0AAYAAjE1AAYACCRpbXBvcnRzAXABEBAJFgEAQQALEAABAgMEBQYHCAkKCwwNDg8ALwlwcm9kdWNlcnMBDHByb2Nlc3NlZC1ieQENd2l0LWNvbXBvbmVudAcwLjIxNS4wABwEbmFtZQAVFHdpdC1jb21wb25lbnQ6Zml4dXBz');
+    const module2 = base64Compile('AGFzbQEAAAABKQdgAX8AYAN/fn8AYAJ/fwBgBH9/f38AYAR/f39/AX9gAn9/AX9gAX8AAxIRAAECAgICAgMDAgAEBQUGBgYEBQFwARERB1cSATAAAAExAAEBMgACATMAAwE0AAQBNQAFATYABgE3AAcBOAAIATkACQIxMAAKAjExAAsCMTIADAIxMwANAjE0AA4CMTUADwIxNgAQCCRpbXBvcnRzAQAK0QERCQAgAEEAEQAACw0AIAAgASACQQERAQALCwAgACABQQIRAgALCwAgACABQQMRAgALCwAgACABQQQRAgALCwAgACABQQURAgALCwAgACABQQYRAgALDwAgACABIAIgA0EHEQMACw8AIAAgASACIANBCBEDAAsLACAAIAFBCRECAAsJACAAQQoRAAALDwAgACABIAIgA0ELEQQACwsAIAAgAUEMEQUACwsAIAAgAUENEQUACwkAIABBDhEGAAsJACAAQQ8RBgALCQAgAEEQEQYACwAvCXByb2R1Y2VycwEMcHJvY2Vzc2VkLWJ5AQ13aXQtY29tcG9uZW50BzAuMjE1LjAAhwgEbmFtZQATEndpdC1jb21wb25lbnQ6c2hpbQHqBxEAM2luZGlyZWN0LXdhc2k6Y2xpL2Vudmlyb25tZW50QDAuMi4wLWdldC1lbnZpcm9ubWVudAFIaW5kaXJlY3Qtd2FzaTpmaWxlc3lzdGVtL3R5cGVzQDAuMi4wLVttZXRob2RdZGVzY3JpcHRvci53cml0ZS12aWEtc3RyZWFtAklpbmRpcmVjdC13YXNpOmZpbGVzeXN0ZW0vdHlwZXNAMC4yLjAtW21ldGhvZF1kZXNjcmlwdG9yLmFwcGVuZC12aWEtc3RyZWFtA0BpbmRpcmVjdC13YXNpOmZpbGVzeXN0ZW0vdHlwZXNAMC4yLjAtW21ldGhvZF1kZXNjcmlwdG9yLmdldC10eXBlBDxpbmRpcmVjdC13YXNpOmZpbGVzeXN0ZW0vdHlwZXNAMC4yLjAtW21ldGhvZF1kZXNjcmlwdG9yLnN0YXQFOmluZGlyZWN0LXdhc2k6ZmlsZXN5c3RlbS90eXBlc0AwLjIuMC1maWxlc3lzdGVtLWVycm9yLWNvZGUGQGluZGlyZWN0LXdhc2k6aW8vc3RyZWFtc0AwLjIuMC1bbWV0aG9kXW91dHB1dC1zdHJlYW0uY2hlY2std3JpdGUHOmluZGlyZWN0LXdhc2k6aW8vc3RyZWFtc0AwLjIuMC1bbWV0aG9kXW91dHB1dC1zdHJlYW0ud3JpdGUITWluZGlyZWN0LXdhc2k6aW8vc3RyZWFtc0AwLjIuMC1bbWV0aG9kXW91dHB1dC1zdHJlYW0uYmxvY2tpbmctd3JpdGUtYW5kLWZsdXNoCUNpbmRpcmVjdC13YXNpOmlvL3N0cmVhbXNAMC4yLjAtW21ldGhvZF1vdXRwdXQtc3RyZWFtLmJsb2NraW5nLWZsdXNoCjdpbmRpcmVjdC13YXNpOmZpbGVzeXN0ZW0vcHJlb3BlbnNAMC4yLjAtZ2V0LWRpcmVjdG9yaWVzCyVhZGFwdC13YXNpX3NuYXBzaG90X3ByZXZpZXcxLWZkX3dyaXRlDChhZGFwdC13YXNpX3NuYXBzaG90X3ByZXZpZXcxLWVudmlyb25fZ2V0DS5hZGFwdC13YXNpX3NuYXBzaG90X3ByZXZpZXcxLWVudmlyb25fc2l6ZXNfZ2V0DiZhZGFwdC13YXNpX3NuYXBzaG90X3ByZXZpZXcxLXByb2NfZXhpdA8zZHRvci1bZXhwb3J0XWNvbXBvbmVudDpjcmMtd2FzbS9jcmMzMi1oYXNoZXItaGFzaGVyEDhkdG9yLVtleHBvcnRdY29tcG9uZW50OmNyYy13YXNtL2NyYzY0LW52bWUtaGFzaGVyLWhhc2hlcg');
+    const module3 = base64Compile('AGFzbQEAAAABKQdgAX8AYAN/fn8AYAJ/fwBgBH9/f38AYAR/f39/AX9gAn9/AX9gAX8AAmwSAAEwAAAAATEAAQABMgACAAEzAAIAATQAAgABNQACAAE2AAIAATcAAwABOAADAAE5AAIAAjEwAAAAAjExAAQAAjEyAAUAAjEzAAUAAjE0AAYAAjE1AAYAAjE2AAYACCRpbXBvcnRzAXABEREJFwEAQQALEQABAgMEBQYHCAkKCwwNDg8QAC8JcHJvZHVjZXJzAQxwcm9jZXNzZWQtYnkBDXdpdC1jb21wb25lbnQHMC4yMTUuMAAcBG5hbWUAFRR3aXQtY29tcG9uZW50OmZpeHVwcw');
     ({ exports: exports0 } = yield instantiateCore(yield module2));
     ({ exports: exports1 } = yield instantiateCore(yield module0, {
-      '[export]component:crc32-wasm/crc32-hasher': {
+      '[export]component:crc-wasm/crc32-hasher': {
         '[resource-drop]hasher': trampoline1,
         '[resource-new]hasher': trampoline0,
+      },
+      '[export]component:crc-wasm/crc64-nvme-hasher': {
+        '[resource-drop]hasher': trampoline3,
+        '[resource-new]hasher': trampoline2,
       },
       wasi_snapshot_preview1: {
         environ_get: exports0['12'],
@@ -1771,16 +1860,16 @@ const $init = (() => {
         'get-environment': exports0['0'],
       },
       'wasi:cli/exit@0.2.0': {
-        exit: trampoline9,
+        exit: trampoline11,
       },
       'wasi:cli/stderr@0.2.0': {
-        'get-stderr': trampoline6,
+        'get-stderr': trampoline8,
       },
       'wasi:cli/stdin@0.2.0': {
-        'get-stdin': trampoline7,
+        'get-stdin': trampoline9,
       },
       'wasi:cli/stdout@0.2.0': {
-        'get-stdout': trampoline8,
+        'get-stdout': trampoline10,
       },
       'wasi:filesystem/preopens@0.2.0': {
         'get-directories': exports0['10'],
@@ -1790,19 +1879,19 @@ const $init = (() => {
         '[method]descriptor.get-type': exports0['3'],
         '[method]descriptor.stat': exports0['4'],
         '[method]descriptor.write-via-stream': exports0['1'],
-        '[resource-drop]descriptor': trampoline2,
+        '[resource-drop]descriptor': trampoline4,
         'filesystem-error-code': exports0['5'],
       },
       'wasi:io/error@0.2.0': {
-        '[resource-drop]error': trampoline4,
+        '[resource-drop]error': trampoline6,
       },
       'wasi:io/streams@0.2.0': {
         '[method]output-stream.blocking-flush': exports0['9'],
         '[method]output-stream.blocking-write-and-flush': exports0['8'],
         '[method]output-stream.check-write': exports0['6'],
         '[method]output-stream.write': exports0['7'],
-        '[resource-drop]input-stream': trampoline5,
-        '[resource-drop]output-stream': trampoline3,
+        '[resource-drop]input-stream': trampoline7,
+        '[resource-drop]output-stream': trampoline5,
       },
     }));
     memory0 = exports1.memory;
@@ -1810,22 +1899,23 @@ const $init = (() => {
     ({ exports: exports3 } = yield instantiateCore(yield module3, {
       '': {
         $imports: exports0.$imports,
-        '0': trampoline10,
-        '1': trampoline11,
-        '10': trampoline20,
+        '0': trampoline12,
+        '1': trampoline13,
+        '10': trampoline22,
         '11': exports2.fd_write,
         '12': exports2.environ_get,
         '13': exports2.environ_sizes_get,
         '14': exports2.proc_exit,
-        '15': exports1['component:crc32-wasm/crc32-hasher#[dtor]hasher'],
-        '2': trampoline12,
-        '3': trampoline13,
-        '4': trampoline14,
-        '5': trampoline15,
-        '6': trampoline16,
-        '7': trampoline17,
-        '8': trampoline18,
-        '9': trampoline19,
+        '15': exports1['component:crc-wasm/crc32-hasher#[dtor]hasher'],
+        '16': exports1['component:crc-wasm/crc64-nvme-hasher#[dtor]hasher'],
+        '2': trampoline14,
+        '3': trampoline15,
+        '4': trampoline16,
+        '5': trampoline17,
+        '6': trampoline18,
+        '7': trampoline19,
+        '8': trampoline20,
+        '9': trampoline21,
       },
     }));
     realloc1 = exports1.cabi_realloc;
@@ -1858,5 +1948,9 @@ const crc32Hasher = {
   Hasher: Hasher,
   
 };
+const crc64NvmeHasher = {
+  Hasher: Hasher$1,
+  
+};
 
-export { crc32Hasher, hash,  }
+export { crc32Hasher, crc64NvmeHasher, crc32Hash, crc64NvmeHash,  }

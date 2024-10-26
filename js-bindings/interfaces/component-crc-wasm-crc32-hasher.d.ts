@@ -1,4 +1,4 @@
-export namespace ComponentCrc32WasmCrc32Hasher {
+export namespace ComponentCrcWasmCrc32Hasher {
   export { Hasher };
 }
 
