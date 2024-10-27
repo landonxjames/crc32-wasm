@@ -1,5 +1,5 @@
 [package]
-name = "crc32-wasm"
+name = "crc-wasm"
 version = "0.1.0"
 edition = "2021"
 
@@ -19,6 +19,6 @@ strip = true
 lto = true
 
 [package.metadata.component]
-package = "component:crc32-wasm"
+package = "component:crc-wasm"
 
 [package.metadata.component.dependencies]

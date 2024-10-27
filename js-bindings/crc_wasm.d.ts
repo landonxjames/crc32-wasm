@@ -8,9 +8,6 @@ import { WasiFilesystemPreopens } from './interfaces/wasi-filesystem-preopens.js
 import { WasiFilesystemTypes } from './interfaces/wasi-filesystem-types.js';
 import { WasiIoError } from './interfaces/wasi-io-error.js';
 import { WasiIoStreams } from './interfaces/wasi-io-streams.js';
-import { ComponentCrcWasmCrc32Hasher } from './interfaces/component-crc-wasm-crc32-hasher.js';
 import { ComponentCrcWasmCrc64NvmeHasher } from './interfaces/component-crc-wasm-crc64-nvme-hasher.js';
-export const crc32Hasher: typeof ComponentCrcWasmCrc32Hasher;
 export const crc64NvmeHasher: typeof ComponentCrcWasmCrc64NvmeHasher;
-export function crc32Hash(input: Uint8Array): number;
 export function crc64NvmeHash(input: Uint8Array): bigint;

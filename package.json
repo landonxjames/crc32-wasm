@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest --run",
-    "build-js-bindings": "cargo component build --release && npx jco transpile ./target/wasm32-wasip1/release/crc32_wasm.wasm -o ./js-bindings/ --no-namespaced-exports"
+    "build-js-bindings": "cargo component build --release && npx jco transpile ./target/wasm32-wasip1/release/crc_wasm.wasm -o ./js-bindings/ --no-namespaced-exports"
   },
   "devDependencies": {
     "@bytecodealliance/jco": "^1.6.0",
